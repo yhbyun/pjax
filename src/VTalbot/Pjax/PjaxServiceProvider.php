@@ -38,8 +38,6 @@ class PjaxServiceProvider extends ServiceProvider {
 				$title = $crawler->filter('head title')->html();
 				
 				$response->setContent('<title>' . $title . '</title>' . $html);
-				
-				$response->header('X-PJAX-URL', $request->getRequestUri());
 			}
 
 			return $response;
